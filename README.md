@@ -1,45 +1,50 @@
-# AndroidManifest ARSC äºŒè¿›åˆ¶æ–‡ä»¶åŸå§‹ä¿®æ”¹å™¨
+# AndroidManifest ARSC ¶ş½øÖÆÎÄ¼şÔ­Ê¼ĞŞ¸ÄÆ÷
 
 
-## 1.ç”¨é€”
-é’ˆå¯¹äºç‰¹å®šapkåç¼–è¯‘ç ´è§£ä¹‹åæ— æ³•å›ç¼–è¯‘æ“ä½œï¼Œç›´æ¥è¿›è¡Œarscæ–‡ä»¶çš„äºŒè¿›åˆ¶æ–‡ä»¶ä¿®æ”¹ï¼Œç„¶ååªéœ€è¦äºŒæ¬¡ç­¾åå³å¯ã€‚æ— éœ€åœ¨è¿›è¡Œåç¼–è¯‘å’Œå›ç¼–è¯‘ã€‚
+## 1.ÓÃÍ¾
+Õë¶ÔÓÚÌØ¶¨apk·´±àÒëÆÆ½âÖ®ºóÎŞ·¨»Ø±àÒë²Ù×÷£¬Ö±½Ó½øĞĞarscÎÄ¼şµÄ¶ş½øÖÆÎÄ¼şĞŞ¸Ä£¬È»ºóÖ»ĞèÒª¶ş´ÎÇ©Ãû¼´¿É¡£ÎŞĞèÔÚ½øĞĞ·´±àÒëºÍ»Ø±àÒë¡£
 
-## 2.ç”¨æ³•
-### 1>æ’å…¥å±æ€§
-**java -jar AXMLEditor.jar -attr -i [æ ‡ç­¾å] [æ ‡ç­¾å”¯ä¸€æ ‡è¯†] [å±æ€§å] [å±æ€§å€¼] [è¾“å…¥xml] [è¾“å‡ºxml]**
+## 2.ÓÃ·¨
+### 1>²åÈëÊôĞÔ
+**java -jar AXMLEditor.jar -attr -i [±êÇ©Ãû] [±êÇ©Î¨Ò»±êÊ¶] [ÊôĞÔÃû] [ÊôĞÔÖµ] [ÊäÈëxml] [Êä³öxml]**
 
-æ¡ˆä¾‹ï¼šjava -jar AXMLEditor.jar -attr -i application package debuggable true AndroidManifest.xml 
+°¸Àı£ºjava -jar AXMLEditor.jar -attr -i application package debuggable true AndroidManifest.xml 
 AndroidManifest_out.xml
 
-applicationçš„æ ‡ç­¾ä¸­æ’å…¥android:debuggable="true"å±æ€§ï¼Œè®©ç¨‹åºå¤„äºå¯è°ƒå¼çŠ¶æ€
+applicationµÄ±êÇ©ÖĞ²åÈëandroid:debuggable="true"ÊôĞÔ£¬ÈÃ³ÌĞò´¦ÓÚ¿Éµ÷Ê½×´Ì¬
 
-### 2>åˆ é™¤å±æ€§
-**java -jar AXMLEditor.jar -attr -r [æ ‡ç­¾å] [æ ‡ç­¾å”¯ä¸€æ ‡è¯†] [å±æ€§å] [è¾“å…¥xml] [è¾“å‡ºxml]**
+### 2>É¾³ıÊôĞÔ
+**java -jar AXMLEditor.jar -attr -r [±êÇ©Ãû] [±êÇ©Î¨Ò»±êÊ¶] [ÊôĞÔÃû] [ÊäÈëxml] [Êä³öxml]**
 
-æ¡ˆä¾‹ï¼šjava -jar AXMLEditor.jar -attr -r application allowBackup AndroidManifest.xml AndroidManifest_out.xml
+°¸Àı£ºjava -jar AXMLEditor.jar -attr -r application allowBackup AndroidManifest.xml AndroidManifest_out.xml
 
-applicationæ ‡ç­¾ä¸­åˆ é™¤allowBackupå±æ€§ï¼Œè¿™æ ·æ­¤appå°±å¯ä»¥è¿›è¡Œæ²™ç›’æ•°æ®å¤‡ä»½
+application±êÇ©ÖĞÉ¾³ıallowBackupÊôĞÔ£¬ÕâÑù´Ëapp¾Í¿ÉÒÔ½øĞĞÉ³ºĞÊı¾İ±¸·İ
 
-### 3>æ›´æ”¹å±æ€§
-**java -jar AXMLEditor.jar -attr -m [æ ‡ç­¾å] [æ ‡ç­¾å”¯ä¸€æ ‡è¯†] [å±æ€§å] [å±æ€§å€¼] [è¾“å…¥xml] [è¾“å‡ºxml]**
+### 3>¸ü¸ÄÊôĞÔ
+**java -jar AXMLEditor.jar -attr -m [±êÇ©Ãû] [±êÇ©Î¨Ò»±êÊ¶] [ÊôĞÔÃû] [ÊôĞÔÖµ] [ÊäÈëxml] [Êä³öxml]**
 
-æ¡ˆä¾‹ï¼šjava -jar AXMLEditor.jar -attr -m application package debuggable true AndroidManifest.xml AndroidManifest_out.xml
+°¸Àı£ºjava -jar AXMLEditor.jar -attr -m application package debuggable true AndroidManifest.xml AndroidManifest_out.xml
 
-applicationçš„æ ‡ç­¾ä¸­ä¿®æ”¹android:debuggable="true"å±æ€§ï¼Œè®©ç¨‹åºå¤„äºå¯è°ƒå¼çŠ¶æ€
+applicationµÄ±êÇ©ÖĞĞŞ¸Äandroid:debuggable="true"ÊôĞÔ£¬ÈÃ³ÌĞò´¦ÓÚ¿Éµ÷Ê½×´Ì¬
 
-### 4>æ’å…¥æ ‡ç­¾
-**java -jar AXMLEditor.jar -tag -i [éœ€è¦æ’å…¥æ ‡ç­¾å†…å®¹çš„xmlæ–‡ä»¶] [è¾“å…¥xml] [è¾“å‡ºxml]**
+### 4>»ñÈ¡ÊôĞÔ
+**java -jar AXMLEditor.jar -attr -m [±êÇ©Ãû] [±êÇ©Î¨Ò»±êÊ¶] [ÊôĞÔÃû] [ÊäÈëxml]**
 
-æ¡ˆä¾‹ï¼šjava -jar AXMLEditor.jar -tag -i [insert.xml] AndroidManifest.xml AndroidManifest_out.xml
+°¸Àı£ºjava -jar AXMLEditor.jar -attr -m application package name AndroidManifest.xml
 
-å› ä¸ºæ’å…¥æ ‡ç­¾æ—¶ä¸€ä¸ªæ ‡ç­¾å†…å®¹æ¯”è¾ƒå¤šï¼Œæ‰€ä»¥å‘½ä»¤æ–¹å¼ä¸æ–¹ä¾¿ï¼Œè€Œæ˜¯è¾“å…¥ä¸€ä¸ªéœ€è¦æ’å…¥æ ‡ç­¾å†…å®¹çš„xmlæ–‡ä»¶å³å¯ã€‚
+applicationµÄ±êÇ©ÖĞĞŞ¸Äandroid:debuggable="true"ÊôĞÔ£¬ÈÃ³ÌĞò´¦ÓÚ¿Éµ÷Ê½×´Ì¬
 
-### 5>åˆ é™¤æ ‡ç­¾
-**java -jar AXMLEditor.jar -tag -r [æ ‡ç­¾å] [æ ‡ç­¾å”¯ä¸€æ ‡è¯†] [è¾“å…¥xml] [è¾“å‡ºxml]**
+### 5>²åÈë±êÇ©
+**java -jar AXMLEditor.jar -tag -i [ĞèÒª²åÈë±êÇ©ÄÚÈİµÄxmlÎÄ¼ş] [ÊäÈëxml] [Êä³öxml]**
 
-æ¡ˆä¾‹ï¼šjava -jar AXMLEditor.jar -tag -r activity cn.wjdiankong.demo.MainActivity AndroidManifest.xml AndroidManifest_out.xml
+°¸Àı£ºjava -jar AXMLEditor.jar -tag -i [insert.xml] AndroidManifest.xml AndroidManifest_out.xml
 
-åˆ é™¤android:name="cn.wjdiankong.demo.MainActivity"çš„æ ‡ç­¾å†…å®¹
+ÒòÎª²åÈë±êÇ©Ê±Ò»¸ö±êÇ©ÄÚÈİ±È½Ï¶à£¬ËùÒÔÃüÁî·½Ê½²»·½±ã£¬¶øÊÇÊäÈëÒ»¸öĞèÒª²åÈë±êÇ©ÄÚÈİµÄxmlÎÄ¼ş¼´¿É¡£
 
+### 6>É¾³ı±êÇ©
+**java -jar AXMLEditor.jar -tag -r [±êÇ©Ãû] [±êÇ©Î¨Ò»±êÊ¶] [ÊäÈëxml] [Êä³öxml]**
 
+°¸Àı£ºjava -jar AXMLEditor.jar -tag -r activity cn.wjdiankong.demo.MainActivity AndroidManifest.xml AndroidManifest_out.xml
+
+É¾³ıandroid:name="cn.wjdiankong.demo.MainActivity"µÄ±êÇ©ÄÚÈİ
 

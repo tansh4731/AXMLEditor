@@ -1,0 +1,7 @@
+{
+    "search.exclude": {
+        "!/system/**/*.ps*": true,
+        "**/bower_components": false,
+        "system/": true
+    }
+}

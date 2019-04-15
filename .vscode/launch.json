@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<AXMLEditor modify name>",
+            "request": "launch",
+            "mainClass": "cn.wjdiankong.main.Main",
+            "projectName": "AXMLEditor",
+            "cwd": "${workspaceFolder}",
+            "args": ["-attr",
+                "-m",
+                "application", "package",
+                "name", "com.android.test.appliation1",
+                "AndroidManifest.xml", "AndroidManifest_out.xml"]
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<AXMLEditor insert name>",
+            "request": "launch",
+            "mainClass": "cn.wjdiankong.main.Main",
+            "projectName": "AXMLEditor",
+            "cwd": "${workspaceFolder}",
+            "args": ["-attr",
+                "-i",
+                "application", "package",
+                "name", "com.android.test.appliation1",
+                "AndroidManifest.xml", "AndroidManifest_out.xml"]
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<AXMLEditor get name>",
+            "request": "launch",
+            "mainClass": "cn.wjdiankong.main.Main",
+            "projectName": "AXMLEditor",
+            "cwd": "${workspaceFolder}",
+            "args": ["-attr",
+                "-g",
+                "application", "package",
+                "name",
+                "AndroidManifest.xml"]
+        }
+    ]
+}

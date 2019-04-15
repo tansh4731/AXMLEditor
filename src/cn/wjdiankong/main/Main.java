@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Main {
 	
-	private final static String CMD_TXT = "[usage java -jar AXMLEditor.jar [-tag|-attr] [-i|-r|-m] [标签名|标签唯一ID|属性名|属性值] [输入文件|输出文件]";
+	private final static String CMD_TXT = "[usage java -jar AXMLEditor.jar [-tag|-attr] [-i|-r|-m|-g] [标签名|标签唯一ID|属性名|属性值] [输入文件|输出文件]";
 
 	public static void main(String[] args){
 
@@ -26,17 +26,31 @@ public class Main {
 			System.out.println("参数有误...");
 			System.out.println(CMD_TXT);
 			return;
-		}
-		
-		String inputfile = args[args.length-2];
-		String outputfile = args[args.length-1];
-		File inputFile = new File(inputfile);
-		File outputFile = new File(outputfile);
+        }
+
+        boolean updateAndroidManifest = true;
+        if ("-g".equals(args[1])) {
+            updateAndroidManifest = false;
+        }
+
+        String inputfile = "";
+        String outputfile = "";
+        if (updateAndroidManifest) {
+            inputfile = args[args.length - 2];
+            outputfile = args[args.length - 1];
+        }
+        else
+        {
+            inputfile = args[args.length - 1];
+        }
+        File inputFile = new File(inputfile);
+        File outputFile = new File(outputfile);
+
 		if(!inputFile.exists()){
 			System.out.println("输入文件不存在...");
 			return;
 		}
-		
+
 		//读文件
 		FileInputStream fis = null;
 		ByteArrayOutputStream bos = null;
@@ -58,29 +72,30 @@ public class Main {
 			}catch(Exception e){
 			}
 		}
-		
-		doCommand(args);
-		
-		//写文件
-		if(!outputFile.exists()){
-			outputFile.delete();
-		}
-		FileOutputStream fos = null;
-		try{
-			fos = new FileOutputStream(outputFile);
-			fos.write(ParserChunkUtils.xmlStruct.byteSrc);
-			fos.close();
-		}catch(Exception e){
-		}finally{
-			if(fos != null){
-				try {
-					fos.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
 
+		doCommand(args);
+
+        if (updateAndroidManifest) {
+            // 写文件
+            if (!outputFile.exists()) {
+                outputFile.delete();
+            }
+            FileOutputStream fos = null;
+            try {
+                fos = new FileOutputStream(outputFile);
+                fos.write(ParserChunkUtils.xmlStruct.byteSrc);
+                fos.close();
+            } catch (Exception e) {
+            } finally {
+                if (fos != null) {
+                    try {
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
 	}
 
 	public static void testDemo(){
@@ -190,6 +205,18 @@ public class Main {
 				String value = args[5];
 				XmlEditor.modifyAttr(tag, tagName, attr, value);
 				System.out.println("修改属性完成...");
+			}else if("-g".equals(args[1])){
+				if(args.length < 5){
+					System.out.println("缺少参数...");
+					System.out.println(CMD_TXT);
+					return;
+				}
+				//获取属性
+				String tag = args[2];
+				String tagName = args[3];
+				String attr = args[4];
+				String value = XmlEditor.getAttr(tag, tagName, attr);
+				System.out.println(tag + "（" + tagName + "）的" + attr + "属性值为" + value);
 			}else{
 				System.out.println("操作属性参数有误...");
 				System.out.println(CMD_TXT);
